@@ -13,6 +13,13 @@
 		2B7EBB6324DD9A9F0048062A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EBB6224DD9A9F0048062A /* Assets.xcassets */; };
 		2B7EBB6624DD9A9F0048062A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EBB6424DD9A9F0048062A /* LaunchScreen.storyboard */; };
 		2B7EBB7124DD9AA00048062A /* RedditAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB7024DD9AA00048062A /* RedditAppTests.swift */; };
+		2B7EBB8024DDA4FC0048062A /* TopListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB7F24DDA4FC0048062A /* TopListingsViewController.swift */; };
+		2B7EBB8224DDA5210048062A /* TopListingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB8124DDA5210048062A /* TopListingsViewModel.swift */; };
+		2B7EBB8524DDA8030048062A /* AdvertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB8324DDA8030048062A /* AdvertTableViewCell.swift */; };
+		2B7EBB8624DDA8030048062A /* AdvertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EBB8424DDA8030048062A /* AdvertTableViewCell.xib */; };
+		2B7EBB8924DDA82B0048062A /* AdvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB8824DDA82B0048062A /* AdvertViewModel.swift */; };
+		2B7EBB8B24DDB0350048062A /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB8A24DDB0340048062A /* UIView+Shadow.swift */; };
+		2B7EBB8D24DDB0C40048062A /* TableViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB8C24DDB0C40048062A /* TableViewUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		2B7EBB6C24DD9AA00048062A /* RedditAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7EBB7024DD9AA00048062A /* RedditAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditAppTests.swift; sourceTree = "<group>"; };
 		2B7EBB7224DD9AA00048062A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B7EBB7F24DDA4FC0048062A /* TopListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListingsViewController.swift; sourceTree = "<group>"; };
+		2B7EBB8124DDA5210048062A /* TopListingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListingsViewModel.swift; sourceTree = "<group>"; };
+		2B7EBB8324DDA8030048062A /* AdvertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertTableViewCell.swift; sourceTree = "<group>"; };
+		2B7EBB8424DDA8030048062A /* AdvertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvertTableViewCell.xib; sourceTree = "<group>"; };
+		2B7EBB8824DDA82B0048062A /* AdvertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertViewModel.swift; sourceTree = "<group>"; };
+		2B7EBB8A24DDB0340048062A /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		2B7EBB8C24DDB0C40048062A /* TableViewUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,9 @@
 		2B7EBB5824DD9A9B0048062A /* RedditApp */ = {
 			isa = PBXGroup;
 			children = (
+				2B7EBB8C24DDB0C40048062A /* TableViewUtil.swift */,
+				2B7EBB8A24DDB0340048062A /* UIView+Shadow.swift */,
+				2B7EBB7D24DDA4B90048062A /* Modules */,
 				2B7EBB5924DD9A9B0048062A /* AppDelegate.swift */,
 				2B7EBB5D24DD9A9B0048062A /* ViewController.swift */,
 				2B7EBB6724DD9A9F0048062A /* Info.plist */,
@@ -110,6 +127,34 @@
 				2B7EBB6224DD9A9F0048062A /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2B7EBB7D24DDA4B90048062A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2B7EBB7E24DDA4C10048062A /* TopListings */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2B7EBB7E24DDA4C10048062A /* TopListings */ = {
+			isa = PBXGroup;
+			children = (
+				2B7EBB8724DDA8070048062A /* Cells */,
+				2B7EBB7F24DDA4FC0048062A /* TopListingsViewController.swift */,
+				2B7EBB8124DDA5210048062A /* TopListingsViewModel.swift */,
+			);
+			path = TopListings;
+			sourceTree = "<group>";
+		};
+		2B7EBB8724DDA8070048062A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2B7EBB8324DDA8030048062A /* AdvertTableViewCell.swift */,
+				2B7EBB8424DDA8030048062A /* AdvertTableViewCell.xib */,
+				2B7EBB8824DDA82B0048062A /* AdvertViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7EBB6624DD9A9F0048062A /* LaunchScreen.storyboard in Resources */,
+				2B7EBB8624DDA8030048062A /* AdvertTableViewCell.xib in Resources */,
 				2B7EBB6324DD9A9F0048062A /* Assets.xcassets in Resources */,
 				2B7EBB6124DD9A9B0048062A /* Main.storyboard in Resources */,
 			);
@@ -213,8 +259,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B7EBB8B24DDB0350048062A /* UIView+Shadow.swift in Sources */,
+				2B7EBB8924DDA82B0048062A /* AdvertViewModel.swift in Sources */,
+				2B7EBB8524DDA8030048062A /* AdvertTableViewCell.swift in Sources */,
 				2B7EBB5E24DD9A9B0048062A /* ViewController.swift in Sources */,
+				2B7EBB8224DDA5210048062A /* TopListingsViewModel.swift in Sources */,
 				2B7EBB5A24DD9A9B0048062A /* AppDelegate.swift in Sources */,
+				2B7EBB8024DDA4FC0048062A /* TopListingsViewController.swift in Sources */,
+				2B7EBB8D24DDB0C40048062A /* TableViewUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
