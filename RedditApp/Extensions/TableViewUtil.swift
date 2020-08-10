@@ -1,9 +1,9 @@
 //
 //  TableViewUtil.swift
-//  UpstoxPro
+//  RedditApp
 //
-//  Created by Shravan Sukumar on 25/05/18.
-//  Copyright © 2018 Vinita. All rights reserved.
+//  Created by Petrov Anton on 07.08.2020.
+//  Copyright © 2020 apm. All rights reserved.
 //
 
 import UIKit

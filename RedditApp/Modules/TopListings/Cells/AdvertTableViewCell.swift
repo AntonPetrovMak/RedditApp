@@ -31,8 +31,8 @@ class AdvertTableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    cardView.layer.cornerRadius = 5
     cardView.addShadow()
+    clipsToBounds = true
   }
   
   // MARK: - Private
@@ -40,6 +40,7 @@ class AdvertTableViewCell: UITableViewCell {
   func updateCell(_ viewModel: AdvertViewModel) {
     titleLabel.text = viewModel.title
     fullnameLabel.text = viewModel.fullname
+    commentsLabel.text = "\(viewModel.numberOfComments)"
   }
   
   // MARK: - Public

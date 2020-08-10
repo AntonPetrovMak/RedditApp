@@ -12,5 +12,6 @@ struct AdvertViewModel {
   
   let title: String
   let fullname: String
+  let numberOfComments: Int
   
 }

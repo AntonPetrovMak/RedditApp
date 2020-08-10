@@ -25,21 +25,63 @@ enum TopListingsRow {
 
 protocol TopListingsViewModel {
   var sections: [TopListingsSection] { get }
-  var reload: (() -> Void)? { get set }
+  var reload: ObservableEmpty { get set }
+  var isActivityLoading: Observable<Bool> { get set }
+  var isRefreshLoading: Observable<Bool> { get set }
+  
+  func doLaunch()
+  func refreshSections()
 }
 
 final class RedditTopListingsViewModel: TopListingsViewModel {
   
-  private var redditTopListings: [AdvertViewModel] =
-    [AdvertViewModel(title: "He saved 22 of his 23 students", fullname: "Jon"),
-     AdvertViewModel(title: "Reddit meet a person who cleans out COVID rooms. They too put their lives on the line.", fullname: "Mike"),
-     AdvertViewModel(title: "TIL that in “Forrest Gump,” when his microphone is cut off at the rally, what you don’t hear him say is “Sometimes when people go to Vietnam, they go home to their mommas without any legs. Sometimes they don’t go home at all. That’s a bad thing. That’s all I have to say about that.”", fullname: "Lola")]
+  // MARK: - TopListingsViewModel
   
   var sections: [TopListingsSection] {
-    let rows = redditTopListings.map { TopListingsRow.advert(viewModel: $0) }
-    return [.top(rows: rows)]
+    return redditSections
   }
   
-  var reload: (() -> Void)?
+  var reload = ObservableEmpty()
+  var isActivityLoading = Observable(false)
+  var isRefreshLoading = Observable(false)
+  
+  func doLaunch() {
+    loadAdverts(loadingIndicator: isActivityLoading)
+  }
+  
+  func refreshSections() {
+    loadAdverts(loadingIndicator: isRefreshLoading)
+  }
+  
+  // MARK: - Private properties
+  
+  private var redditTopListings = [AdvertViewModel]() {
+    didSet {
+      let rows = redditTopListings.map { TopListingsRow.advert(viewModel: $0) }
+      redditSections = [.top(rows: rows)]
+    }
+  }
+  
+  private var redditSections: [TopListingsSection] = []
+  
+}
+
+// MARK: - Private
+
+private typealias Private = RedditTopListingsViewModel
+private extension Private {
+  
+  func loadAdverts(loadingIndicator: Observable<Bool>) {
+    loadingIndicator.value = true
+    DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+      DispatchQueue.main.async {
+        self.redditTopListings = [AdvertViewModel(title: "He saved 22 of his 23 students", fullname: "Jon", numberOfComments: 3),
+        AdvertViewModel(title: "Reddit meet a person who cleans out COVID rooms. They too put their lives on the line.", fullname: "Mike", numberOfComments: 55),
+        AdvertViewModel(title: "TIL that in “Forrest Gump,” when his microphone is cut off at the rally, what you don’t hear him say is “Sometimes when people go to Vietnam, they go home to their mommas without any legs. Sometimes they don’t go home at all. That’s a bad thing. That’s all I have to say about that.”", fullname: "Lola", numberOfComments: 1234567890987654321)]
+        self.reload.notify()
+        loadingIndicator.value = false
+      }
+    }
+  }
   
 }
