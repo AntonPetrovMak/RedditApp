@@ -8,8 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		2B4AECA224E1843E00F6E445 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AECA124E1843E00F6E445 /* Observer.swift */; };
+		2B4AECA824E18CDF00F6E445 /* ListingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AECA724E18CDF00F6E445 /* ListingsWorker.swift */; };
+		2B4AEDF924E18F2E00F6E445 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC224E18F2E00F6E445 /* RESTClient.swift */; };
+		2B4AEDFA24E18F2E00F6E445 /* RESTBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC424E18F2E00F6E445 /* RESTBaseResponse.swift */; };
+		2B4AEDFB24E18F2E00F6E445 /* RESTRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC524E18F2E00F6E445 /* RESTRouterProtocol.swift */; };
+		2B4AEDFC24E18F2E00F6E445 /* RESTResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC624E18F2E00F6E445 /* RESTResponseHandler.swift */; };
+		2B4AEDFD24E18F2E00F6E445 /* RESTDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC724E18F2E00F6E445 /* RESTDataRequest.swift */; };
+		2B4AEDFE24E18F2E00F6E445 /* RESTDecodeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC824E18F2E00F6E445 /* RESTDecodeStrategy.swift */; };
+		2B4AEDFF24E18F2E00F6E445 /* RESTClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDC924E18F2E00F6E445 /* RESTClientProtocol.swift */; };
+		2B4AEE0024E18F2E00F6E445 /* RESTDataRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDCA24E18F2E00F6E445 /* RESTDataRequestProtocol.swift */; };
+		2B4AEE0124E18F2E00F6E445 /* RESTServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDCB24E18F2E00F6E445 /* RESTServerConfig.swift */; };
+		2B4AEE0324E18F2E00F6E445 /* RESTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDCD24E18F2E00F6E445 /* RESTError.swift */; };
+		2B4AEE0424E18F2E00F6E445 /* RESTClientTimeOuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEDCE24E18F2E00F6E445 /* RESTClientTimeOuts.swift */; };
+		2B4AEE0624E27BCC00F6E445 /* Decodable+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE0524E27BCC00F6E445 /* Decodable+Init.swift */; };
+		2B4AEE0824E285D100F6E445 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE0724E285D100F6E445 /* Constants.swift */; };
+		2B4AEE0A24E2866A00F6E445 /* RESTRouterProtocol+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE0924E2866A00F6E445 /* RESTRouterProtocol+Config.swift */; };
+		2B4AEE0D24E2890300F6E445 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE0C24E2890300F6E445 /* Post.swift */; };
+		2B4AEE0F24E28D5B00F6E445 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE0E24E28D5B00F6E445 /* Listing.swift */; };
+		2B4AEE1224E28E8C00F6E445 /* ListingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE1124E28E8C00F6E445 /* ListingsStore.swift */; };
+		2B4AEE1524E28EB300F6E445 /* RedditListingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE1424E28EB300F6E445 /* RedditListingsRouter.swift */; };
+		2B4AEE1724E28F1C00F6E445 /* RedditTopListingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4AEE1624E28F1C00F6E445 /* RedditTopListingsViewModel.swift */; };
 		2B7EBB5A24DD9A9B0048062A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB5924DD9A9B0048062A /* AppDelegate.swift */; };
-		2B7EBB5E24DD9A9B0048062A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7EBB5D24DD9A9B0048062A /* ViewController.swift */; };
 		2B7EBB6124DD9A9B0048062A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EBB5F24DD9A9B0048062A /* Main.storyboard */; };
 		2B7EBB6324DD9A9F0048062A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EBB6224DD9A9F0048062A /* Assets.xcassets */; };
 		2B7EBB6624DD9A9F0048062A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7EBB6424DD9A9F0048062A /* LaunchScreen.storyboard */; };
@@ -35,9 +54,28 @@
 
 /* Begin PBXFileReference section */
 		2B4AECA124E1843E00F6E445 /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		2B4AECA724E18CDF00F6E445 /* ListingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsWorker.swift; sourceTree = "<group>"; };
+		2B4AEDC224E18F2E00F6E445 /* RESTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
+		2B4AEDC424E18F2E00F6E445 /* RESTBaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTBaseResponse.swift; sourceTree = "<group>"; };
+		2B4AEDC524E18F2E00F6E445 /* RESTRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTRouterProtocol.swift; sourceTree = "<group>"; };
+		2B4AEDC624E18F2E00F6E445 /* RESTResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTResponseHandler.swift; sourceTree = "<group>"; };
+		2B4AEDC724E18F2E00F6E445 /* RESTDataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTDataRequest.swift; sourceTree = "<group>"; };
+		2B4AEDC824E18F2E00F6E445 /* RESTDecodeStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTDecodeStrategy.swift; sourceTree = "<group>"; };
+		2B4AEDC924E18F2E00F6E445 /* RESTClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClientProtocol.swift; sourceTree = "<group>"; };
+		2B4AEDCA24E18F2E00F6E445 /* RESTDataRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTDataRequestProtocol.swift; sourceTree = "<group>"; };
+		2B4AEDCB24E18F2E00F6E445 /* RESTServerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTServerConfig.swift; sourceTree = "<group>"; };
+		2B4AEDCD24E18F2E00F6E445 /* RESTError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTError.swift; sourceTree = "<group>"; };
+		2B4AEDCE24E18F2E00F6E445 /* RESTClientTimeOuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClientTimeOuts.swift; sourceTree = "<group>"; };
+		2B4AEE0524E27BCC00F6E445 /* Decodable+Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decodable+Init.swift"; sourceTree = "<group>"; };
+		2B4AEE0724E285D100F6E445 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2B4AEE0924E2866A00F6E445 /* RESTRouterProtocol+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RESTRouterProtocol+Config.swift"; sourceTree = "<group>"; };
+		2B4AEE0C24E2890300F6E445 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2B4AEE0E24E28D5B00F6E445 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		2B4AEE1124E28E8C00F6E445 /* ListingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsStore.swift; sourceTree = "<group>"; };
+		2B4AEE1424E28EB300F6E445 /* RedditListingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditListingsRouter.swift; sourceTree = "<group>"; };
+		2B4AEE1624E28F1C00F6E445 /* RedditTopListingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTopListingsViewModel.swift; sourceTree = "<group>"; };
 		2B7EBB5624DD9A9B0048062A /* RedditApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7EBB5924DD9A9B0048062A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B7EBB5D24DD9A9B0048062A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B7EBB6024DD9A9B0048062A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B7EBB6224DD9A9F0048062A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B7EBB6524DD9A9F0048062A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,6 +113,8 @@
 		2B4AECA324E1844400F6E445 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2B4AEE0924E2866A00F6E445 /* RESTRouterProtocol+Config.swift */,
+				2B4AEE0524E27BCC00F6E445 /* Decodable+Init.swift */,
 				2B7EBB8C24DDB0C40048062A /* TableViewUtil.swift */,
 				2B7EBB8A24DDB0340048062A /* UIView+Shadow.swift */,
 			);
@@ -84,9 +124,78 @@
 		2B4AECA524E1848B00F6E445 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2B4AEE0724E285D100F6E445 /* Constants.swift */,
 				2B4AECA124E1843E00F6E445 /* Observer.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2B4AECA624E18C7400F6E445 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AECA724E18CDF00F6E445 /* ListingsWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		2B4AED9024E18F2D00F6E445 /* RESTClient */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AEDC224E18F2E00F6E445 /* RESTClient.swift */,
+				2B4AEDC324E18F2E00F6E445 /* Domain */,
+			);
+			path = RESTClient;
+			sourceTree = "<group>";
+		};
+		2B4AEDC324E18F2E00F6E445 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AEDC424E18F2E00F6E445 /* RESTBaseResponse.swift */,
+				2B4AEDC524E18F2E00F6E445 /* RESTRouterProtocol.swift */,
+				2B4AEDC624E18F2E00F6E445 /* RESTResponseHandler.swift */,
+				2B4AEDC724E18F2E00F6E445 /* RESTDataRequest.swift */,
+				2B4AEDC824E18F2E00F6E445 /* RESTDecodeStrategy.swift */,
+				2B4AEDC924E18F2E00F6E445 /* RESTClientProtocol.swift */,
+				2B4AEDCA24E18F2E00F6E445 /* RESTDataRequestProtocol.swift */,
+				2B4AEDCB24E18F2E00F6E445 /* RESTServerConfig.swift */,
+				2B4AEDCD24E18F2E00F6E445 /* RESTError.swift */,
+				2B4AEDCE24E18F2E00F6E445 /* RESTClientTimeOuts.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2B4AEE0B24E2889A00F6E445 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AEE0C24E2890300F6E445 /* Post.swift */,
+				2B4AEE0E24E28D5B00F6E445 /* Listing.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2B4AEE1024E28E5A00F6E445 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AEE1124E28E8C00F6E445 /* ListingsStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		2B4AEE1324E28EA300F6E445 /* RESTRouters */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AEE1424E28EB300F6E445 /* RedditListingsRouter.swift */,
+			);
+			path = RESTRouters;
+			sourceTree = "<group>";
+		};
+		2B4AEE1824E2A24400F6E445 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2B4AECA524E1848B00F6E445 /* Utils */,
+				2B4AED9024E18F2D00F6E445 /* RESTClient */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2B7EBB4D24DD9A9B0048062A = {
@@ -110,11 +219,14 @@
 		2B7EBB5824DD9A9B0048062A /* RedditApp */ = {
 			isa = PBXGroup;
 			children = (
-				2B4AECA524E1848B00F6E445 /* Utils */,
-				2B4AECA324E1844400F6E445 /* Extensions */,
-				2B7EBB7D24DDA4B90048062A /* Modules */,
 				2B7EBB5924DD9A9B0048062A /* AppDelegate.swift */,
-				2B7EBB5D24DD9A9B0048062A /* ViewController.swift */,
+				2B4AEE1824E2A24400F6E445 /* Services */,
+				2B4AEE1324E28EA300F6E445 /* RESTRouters */,
+				2B4AECA324E1844400F6E445 /* Extensions */,
+				2B4AEE1024E28E5A00F6E445 /* Stores */,
+				2B4AECA624E18C7400F6E445 /* Workers */,
+				2B4AEE0B24E2889A00F6E445 /* Entities */,
+				2B7EBB7D24DDA4B90048062A /* Modules */,
 				2B7EBB6724DD9A9F0048062A /* Info.plist */,
 				2B7EBB7B24DD9B820048062A /* Storyboards */,
 				2B7EBB7C24DD9B9D0048062A /* Resources */,
@@ -162,6 +274,7 @@
 				2B7EBB8724DDA8070048062A /* Cells */,
 				2B7EBB7F24DDA4FC0048062A /* TopListingsViewController.swift */,
 				2B7EBB8124DDA5210048062A /* TopListingsViewModel.swift */,
+				2B4AEE1624E28F1C00F6E445 /* RedditTopListingsViewModel.swift */,
 			);
 			path = TopListings;
 			sourceTree = "<group>";
@@ -278,14 +391,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4AEE0024E18F2E00F6E445 /* RESTDataRequestProtocol.swift in Sources */,
 				2B7EBB8B24DDB0350048062A /* UIView+Shadow.swift in Sources */,
+				2B4AEE1724E28F1C00F6E445 /* RedditTopListingsViewModel.swift in Sources */,
+				2B4AEDFF24E18F2E00F6E445 /* RESTClientProtocol.swift in Sources */,
+				2B4AEE0424E18F2E00F6E445 /* RESTClientTimeOuts.swift in Sources */,
+				2B4AEE0A24E2866A00F6E445 /* RESTRouterProtocol+Config.swift in Sources */,
+				2B4AEDFE24E18F2E00F6E445 /* RESTDecodeStrategy.swift in Sources */,
+				2B4AEDF924E18F2E00F6E445 /* RESTClient.swift in Sources */,
+				2B4AEE0824E285D100F6E445 /* Constants.swift in Sources */,
 				2B4AECA224E1843E00F6E445 /* Observer.swift in Sources */,
+				2B4AEE0D24E2890300F6E445 /* Post.swift in Sources */,
+				2B4AEDFB24E18F2E00F6E445 /* RESTRouterProtocol.swift in Sources */,
+				2B4AEE0124E18F2E00F6E445 /* RESTServerConfig.swift in Sources */,
+				2B4AEDFD24E18F2E00F6E445 /* RESTDataRequest.swift in Sources */,
 				2B7EBB8924DDA82B0048062A /* AdvertViewModel.swift in Sources */,
+				2B4AEE0624E27BCC00F6E445 /* Decodable+Init.swift in Sources */,
 				2B7EBB8524DDA8030048062A /* AdvertTableViewCell.swift in Sources */,
-				2B7EBB5E24DD9A9B0048062A /* ViewController.swift in Sources */,
+				2B4AEDFA24E18F2E00F6E445 /* RESTBaseResponse.swift in Sources */,
+				2B4AECA824E18CDF00F6E445 /* ListingsWorker.swift in Sources */,
+				2B4AEE1524E28EB300F6E445 /* RedditListingsRouter.swift in Sources */,
 				2B7EBB8224DDA5210048062A /* TopListingsViewModel.swift in Sources */,
+				2B4AEE0F24E28D5B00F6E445 /* Listing.swift in Sources */,
+				2B4AEE0324E18F2E00F6E445 /* RESTError.swift in Sources */,
 				2B7EBB5A24DD9A9B0048062A /* AppDelegate.swift in Sources */,
+				2B4AEE1224E28E8C00F6E445 /* ListingsStore.swift in Sources */,
 				2B7EBB8024DDA4FC0048062A /* TopListingsViewController.swift in Sources */,
+				2B4AEDFC24E18F2E00F6E445 /* RESTResponseHandler.swift in Sources */,
 				2B7EBB8D24DDB0C40048062A /* TableViewUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
