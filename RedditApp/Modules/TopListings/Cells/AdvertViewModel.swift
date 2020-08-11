@@ -13,5 +13,7 @@ struct AdvertViewModel {
   let title: String
   let fullname: String
   let numberOfComments: Int
+  let avatarURL: URL?
+  let contentImageURL: URL?
   
 }

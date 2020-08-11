@@ -28,11 +28,14 @@ final class RESTClient: RESTClientProtocol {
   ///
   /// - Parameters:
   ///   - endpoint: A container with contain data for request
+  ///   - queue: a queue for completion
   ///   - completion: A closure to be executed once the request has finished.
-  static func performRequestWithDecodableModel<DataType: Decodable>(endpoint: RESTRouterProtocol, completion: @escaping CompletionResultHandler<DataType>) {
+  static func performRequestWithDecodableModel<DataType: Decodable>(endpoint: RESTRouterProtocol, queue: DispatchQueue, completion: @escaping CompletionResultHandler<DataType>) {
     do {
       let _request = try request(endpoint: endpoint)
-      _request.responseDecodableModel(session: session, completion: completion).resume()
+      _request.responseDecodableModel(session: session, completion: { result in
+        queue.async { completion(result) }
+      }).resume()
     } catch {
       completion(.failure(error))
     }
@@ -42,13 +45,31 @@ final class RESTClient: RESTClientProtocol {
   ///
   /// - Parameters:
   ///   - endpoint: A container with contain data for request
+  ///   - queue: a queue for completion
   ///   - completion: A closure to be executed once the request has finished.
-  static func performRequestWithDecodableModels<DataType: Decodable>(endpoint: RESTRouterProtocol, completion: @escaping CompletionResultHandler<[DataType]>) {
+  static func performRequestWithDecodableModels<DataType: Decodable>(endpoint: RESTRouterProtocol, queue: DispatchQueue = DispatchQueue.main, completion: @escaping CompletionResultHandler<[DataType]>) {
     do {
       let _request = try request(endpoint: endpoint)
-      _request.responseDecodableModels(session: session, completion: completion).resume()
+      _request.responseDecodableModels(session: session, completion: { result in
+        queue.async { completion(result) }
+      }).resume()
     } catch {
       completion(.failure(error))
     }
+  }
+  
+  static func loadImage(url: URL, completion: @escaping CompletionResultHandler<Data>) -> URLSessionDataTask {
+    let request = URLRequest(url: url)
+    
+    let task = session.dataTask(with: request) { (data, response, error) in
+      if let data = data {
+        completion(.success(data))
+      } else {
+        completion(.failure(error ?? RESTError.responseBaseDataNil))
+      }
+    }
+    task.resume()
+    
+    return task
   }
 }

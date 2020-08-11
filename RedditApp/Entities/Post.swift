@@ -15,8 +15,9 @@ struct Post {
   let authorFullname: String
   let thumbnail: String
   let numComments: Int
-  let url: String
-  let createdUtc: Double //1597073084.0,
+  let url: String?
+  let createdUtc: Double
+  let postHint: PostHint?
 }
 
 // MARK: - Decodable
@@ -32,5 +33,6 @@ extension Post: Decodable {
     case numComments = "num_comments"
     case url = "url"
     case createdUtc = "created_utc"
+    case postHint = "post_hint"
   }
 }

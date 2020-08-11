@@ -21,18 +21,30 @@ class AdvertTableViewCell: UITableViewCell {
   @IBOutlet var titleView: UIView!
   @IBOutlet var titleLabel: UILabel!
   
-  @IBOutlet var imagesView: UIView!
-  @IBOutlet var imagesStackView: UIStackView!
+  @IBOutlet var containerImageView: UIView!
+  @IBOutlet var contentImageView: UIImageView!
   
   @IBOutlet var footerView: UIView!
   @IBOutlet var commentsLabel: UILabel!
   
-  private(set) var viewModel: AdvertViewModel?
+  // MARK: - Private properties
+  
+  private var viewModel: AdvertViewModel?
+  
+  // MARK: - Life cycle
   
   override func awakeFromNib() {
     super.awakeFromNib()
     cardView.addShadow()
     clipsToBounds = true
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    thumbnailImageView.image = nil
+    thumbnailImageView.cancelImageLoad()
+    contentImageView.image = nil
+    contentImageView.cancelImageLoad()
   }
   
   // MARK: - Private
@@ -41,6 +53,18 @@ class AdvertTableViewCell: UITableViewCell {
     titleLabel.text = viewModel.title
     fullnameLabel.text = viewModel.fullname
     commentsLabel.text = "\(viewModel.numberOfComments)"
+    
+    if let avatarURL = viewModel.avatarURL {
+      thumbnailImageView.loadImage(at: avatarURL)
+    }
+    
+    if let contentImageURL = viewModel.contentImageURL {
+      contentImageView.loadImage(at: contentImageURL)
+      containerImageView.isHidden = false
+    } else {
+      containerImageView.isHidden = true
+    }
+    
   }
   
   // MARK: - Public

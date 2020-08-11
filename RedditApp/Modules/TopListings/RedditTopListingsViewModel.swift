@@ -37,7 +37,23 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   private var posts = [Post]() {
     didSet {
       redditTopListings = posts.map {
-        AdvertViewModel(title: $0.title, fullname: $0.author, numberOfComments: $0.numComments)
+        var avatarURL: URL?
+        if let url = URL(string: $0.thumbnail), url.canOpenURL {
+          avatarURL = url
+        }
+        
+        var contentImageURL: URL?
+        if $0.postHint == .image,
+          let urlStr = $0.url,
+          let url = URL(string: urlStr), url.canOpenURL {
+          contentImageURL = url
+        }
+        
+        return AdvertViewModel(title: $0.title,
+                               fullname: $0.author,
+                               numberOfComments: $0.numComments,
+                               avatarURL: avatarURL,
+                               contentImageURL: contentImageURL)
       }
     }
   }

@@ -13,15 +13,17 @@ protocol ListingsWorker {
   func fetchMorePosts(completion: @escaping (Result<[Post], Error>) -> Void)
 }
 
-class RedditListingsWorker: ListingsWorker {
+final class RedditListingsWorker: ListingsWorker {
   
   private let store: ListingsStore
-  private let count: UInt = 0
-  private let limit: UInt = 20
+  private let count: UInt
+  private let limit: UInt
   private var listings = [Listing]()
   
-  init(store: ListingsStore) {
+  init(store: ListingsStore, count: UInt = 0, limit: UInt = 20) {
     self.store = store
+    self.count = count
+    self.limit = limit
   }
   
   func clearListings() {
