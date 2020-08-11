@@ -20,3 +20,12 @@ struct ListingChildren: Decodable {
   let kind: String
   let data: Post
 }
+
+extension Listing {
+  
+  var posts: [Post] {
+    return children.map { $0.data }
+  }
+  
+  
+}

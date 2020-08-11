@@ -90,6 +90,10 @@ extension TopListingsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let section = viewModel.sections[indexPath.section]
     
+    if indexPath.row == section.rows.count - 1 {
+      viewModel.loadMoreSections()
+    }
+    
     switch section.rows[indexPath.row] {
     case .advert(let viewModel):
       let cell = tableView.dequeueReusableCell(tableViewCellClass: AdvertTableViewCell.self, forIndexPath: indexPath)

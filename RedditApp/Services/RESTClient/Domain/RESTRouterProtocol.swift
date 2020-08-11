@@ -21,7 +21,7 @@ protocol RESTRouterProtocol: URLRequestConvertible {
   var serverConfig: RESTServerConfig { get }
   var method: HTTPMethod { get }
   var path: String { get }
-  var parameters: [String: String]? { get }
+  var parameters: [String: Any]? { get }
   var baseServerURL: String { get }
   var decodeStrategy: RESTDecodeStrategy { get }
   var timeoutInterval: Double { get }
@@ -88,13 +88,13 @@ extension RESTRouterProtocol {
     return urlRequest
   }
   
-  private func addURLQueryParameters(toURL url: URL, parameters: [String: String]) -> URL {
+  private func addURLQueryParameters(toURL url: URL, parameters: [String: Any]) -> URL {
     guard parameters.count > 0,
       var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
       else { return url }
     
     urlComponents.queryItems = parameters.map {
-      let value = $0.value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+      let value = "\($0.value)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
       return URLQueryItem(name: $0.key, value: value)
     }
     

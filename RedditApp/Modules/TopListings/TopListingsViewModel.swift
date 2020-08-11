@@ -31,4 +31,5 @@ protocol TopListingsViewModel {
   
   func doLaunch()
   func refreshSections()
+  func loadMoreSections()
 }

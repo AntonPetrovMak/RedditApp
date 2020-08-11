@@ -5,6 +5,7 @@
 //  Created by Petrov Anton on 11.08.2020.
 //  Copyright © 2020 apm. All rights reserved.
 //
+
 struct RESTBaseResponse {
   let data: Any?
   let kind: String

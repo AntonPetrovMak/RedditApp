@@ -21,14 +21,26 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   var isRefreshLoading = Observable(false)
   
   func doLaunch() {
-    loadAdverts(loadingIndicator: isActivityLoading)
+    fetchFirstPosts(loadingIndicator: isActivityLoading)
   }
   
   func refreshSections() {
-    loadAdverts(loadingIndicator: isRefreshLoading)
+    fetchFirstPosts(loadingIndicator: isRefreshLoading)
+  }
+  
+  func loadMoreSections() {
+    fetchMorePosts(loadingIndicator: isActivityLoading)
   }
   
   // MARK: - Private properties
+  
+  private var posts = [Post]() {
+    didSet {
+      redditTopListings = posts.map {
+        AdvertViewModel(title: $0.title, fullname: $0.author, numberOfComments: $0.numComments)
+      }
+    }
+  }
   
   private var redditTopListings = [AdvertViewModel]() {
     didSet {
@@ -50,27 +62,36 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
 private typealias Private = RedditTopListingsViewModel
 private extension Private {
   
-  func loadAdverts(loadingIndicator: Observable<Bool>) {
+  func fetchFirstPosts(loadingIndicator: Observable<Bool>) {
     loadingIndicator.value = true
-    worker.loadTopListings { result in
+    worker.fetchFirstPosts { [weak self] result in
+      guard let `self` = self else { return }
       loadingIndicator.value = false
       switch result {
       case .success(let model):
-        print("S-loadTopListings: \(model)")
+        self.posts = model
+        self.reload.notify()
       case .failure(let error):
+        // TODO: display error
         print("F-loadTopListings:\(error)")
       }
     }
-    
-    //    DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-    //      DispatchQueue.main.async {
-    //        self.redditTopListings = [AdvertViewModel(title: "He saved 22 of his 23 students", fullname: "Jon", numberOfComments: 3),
-    //        AdvertViewModel(title: "Reddit meet a person who cleans out COVID rooms. They too put their lives on the line.", fullname: "Mike", numberOfComments: 55),
-    //        AdvertViewModel(title: "TIL that in “Forrest Gump,” when his microphone is cut off at the rally, what you don’t hear him say is “Sometimes when people go to Vietnam, they go home to their mommas without any legs. Sometimes they don’t go home at all. That’s a bad thing. That’s all I have to say about that.”", fullname: "Lola", numberOfComments: 1234567890987654321)]
-    //        self.reload.notify()
-    //        loadingIndicator.value = false
-    //      }
-    //    }
+  }
+  
+  func fetchMorePosts(loadingIndicator: Observable<Bool>) {
+    loadingIndicator.value = true
+    worker.fetchMorePosts { [weak self] result in
+      guard let `self` = self else { return }
+      loadingIndicator.value = false
+      switch result {
+      case .success(let model):
+        self.posts.append(contentsOf: model)
+        self.reload.notify()
+      case .failure(let error):
+        // TODO: display error
+        print("F-loadTopListings:\(error)")
+      }
+    }
   }
   
 }

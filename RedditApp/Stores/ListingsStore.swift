@@ -9,13 +9,17 @@
 import Foundation
 
 protocol ListingsStore {
-  func loadTopListings<T: Decodable>(completion: @escaping (Result<T, Error>) -> Void)
+  func fetchPosts<T: Decodable>(count: UInt, limit: UInt, after: String?, before: String?, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 class RedditListingsStore: ListingsStore {
   
-  func loadTopListings<T: Decodable>(completion: @escaping (Result<T, Error>) -> Void) {
-    let endpoint = RedditListingsRouter.top
+  func fetchPosts<T: Decodable>(count: UInt, limit: UInt, after: String?, before: String?, completion: @escaping (Result<T, Error>) -> Void) {
+    let requestData = RedditListingsRouter.TopListingsData(count: count,
+                                                           limit: limit,
+                                                           after: after,
+                                                           before: before)
+    let endpoint = RedditListingsRouter.top(data: requestData)
     RESTClient.performRequestWithDecodableModel(endpoint: endpoint, completion: completion)
   }
   

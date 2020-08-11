@@ -10,7 +10,7 @@ import Foundation
 
 enum RedditListingsRouter: RESTRouterProtocol {
   
-  case top
+  case top(data: TopListingsData)
   
   var method: HTTPMethod {
     switch self {
@@ -26,8 +26,22 @@ enum RedditListingsRouter: RESTRouterProtocol {
     }
   }
   
-  var parameters: [String : String]? {
-    return nil
+  var parameters: [String: Any]? {
+    switch self {
+    case .top(let data):
+      return data.encodeParameters
+    }
+  }
+  
+}
+
+extension RedditListingsRouter {
+  
+  struct TopListingsData: Codable {
+    let count: UInt
+    let limit: UInt
+    let after: String?
+    let before: String?
   }
   
 }
