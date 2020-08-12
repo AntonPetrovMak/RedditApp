@@ -19,6 +19,7 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   var reload = ObservableEmpty()
   var isActivityLoading = Observable(false)
   var isRefreshLoading = Observable(false)
+  var errorAlertMessage = Observable("")
   
   func doLaunch() {
     fetchFirstPosts(loadingIndicator: isActivityLoading)
@@ -30,6 +31,10 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   
   func loadMoreSections() {
     fetchMorePosts(loadingIndicator: isActivityLoading)
+  }
+  
+  func downloadImages() {
+    
   }
   
   // MARK: - Private properties
@@ -88,8 +93,7 @@ private extension Private {
         self.posts = model
         self.reload.notify()
       case .failure(let error):
-        // TODO: display error
-        print("F-loadTopListings:\(error)")
+        self.errorAlertMessage.value = error.localizedDescription
       }
     }
   }
@@ -104,8 +108,7 @@ private extension Private {
         self.posts.append(contentsOf: model)
         self.reload.notify()
       case .failure(let error):
-        // TODO: display error
-        print("F-loadTopListings:\(error)")
+        self.errorAlertMessage.value = error.localizedDescription
       }
     }
   }

@@ -55,11 +55,11 @@ class AdvertTableViewCell: UITableViewCell {
     commentsLabel.text = "\(viewModel.numberOfComments)"
     
     if let avatarURL = viewModel.avatarURL {
-      thumbnailImageView.loadImage(at: avatarURL)
+      thumbnailImageView.loadImage(at: avatarURL, completion: { })
     }
     
     if let contentImageURL = viewModel.contentImageURL {
-      contentImageView.loadImage(at: contentImageURL)
+      contentImageView.loadImage(at: contentImageURL, completion: { })
       containerImageView.isHidden = false
     } else {
       containerImageView.isHidden = true

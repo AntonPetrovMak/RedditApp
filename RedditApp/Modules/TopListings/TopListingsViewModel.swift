@@ -26,10 +26,12 @@ enum TopListingsRow {
 protocol TopListingsViewModel {
   var sections: [TopListingsSection] { get }
   var reload: ObservableEmpty { get set }
-  var isActivityLoading: Observable<Bool> { get set }
-  var isRefreshLoading: Observable<Bool> { get set }
+  var isActivityLoading: Observable<Bool> { get }
+  var isRefreshLoading: Observable<Bool> { get }
+  var errorAlertMessage: Observable<String> { get }
   
   func doLaunch()
   func refreshSections()
   func loadMoreSections()
+  func downloadImages()
 }

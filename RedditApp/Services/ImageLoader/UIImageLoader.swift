@@ -17,11 +17,12 @@ final class UIImageLoader {
   
   private init() {}
   
-  func load(_ url: URL, for imageView: UIImageView) {
+  func load(_ url: URL, for imageView: UIImageView, completion: @escaping () -> Void) {
     let token = imageLoader.loadImage(url) { result in
       result.mapSuccess { data in
         DispatchQueue.main.async {
           imageView.image = UIImage(data: data)
+          completion()
         }
       }
       

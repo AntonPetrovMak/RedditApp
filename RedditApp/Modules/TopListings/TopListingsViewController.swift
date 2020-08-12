@@ -57,6 +57,10 @@ private extension TopListingsViewController {
       isLoading ? self.refreshControl.beginRefreshing() : self.refreshControl.endRefreshing()
     }
     
+    viewModel.errorAlertMessage.observe(on: self) { [weak self] message in
+      self?.showAlert(title: "Error", message: message)
+    }
+    
   }
   
   // MARK: - Actions
@@ -68,12 +72,13 @@ private extension TopListingsViewController {
 }
 
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource & UITableViewDelegate
 
-extension TopListingsViewController: UITableViewDataSource {
+extension TopListingsViewController: UITableViewDataSource, UITableViewDelegate {
   
   private func setupTableView() {
     tableView.dataSource = self
+    tableView.delegate = self
     tableView.registerNib(viewClass: AdvertTableViewCell.self)
     tableView.backgroundView = refreshControl
   }
@@ -102,10 +107,20 @@ extension TopListingsViewController: UITableViewDataSource {
     }
   }
   
-}
-
-// MARK: -
-
-extension TopListingsViewController {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let section = viewModel.sections[indexPath.section]
+    switch section.rows[indexPath.row] {
+    case .advert(let rowViewModel):
+      guard let contentImageURL = rowViewModel.contentImageURL else { return }
+      presentPreviewImage(imageURL: contentImageURL)
+    }
+  }
+  
+  func presentPreviewImage(imageURL: URL) {
+    guard let previewImageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PreviewImageViewController") as? PreviewImageViewController else { return }
+    
+    previewImageViewController.viewModel = RedditPreviewImageViewModel(previewImageURL: imageURL)
+    navigationController?.pushViewController(previewImageViewController, animated: true)
+  }
   
 }
