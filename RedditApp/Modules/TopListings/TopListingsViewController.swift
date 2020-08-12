@@ -17,7 +17,12 @@ class TopListingsViewController: UIViewController {
   
   // MARK: - Private
   
-  private var viewModel: TopListingsViewModel = RedditTopListingsViewModel()
+  private var viewModel: TopListingsViewModel = {
+    let store = RedditListingsStore()
+    let worker = RedditListingsWorker(store: store)
+    let factory = RedditAdvertViewModelFactory()
+    return RedditTopListingsViewModel(factory: factory, worker: worker)
+  }()
   
   private lazy var refreshControl: UIRefreshControl = {
     let _refreshControl = UIRefreshControl()

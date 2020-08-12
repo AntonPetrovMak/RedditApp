@@ -17,6 +17,7 @@ class AdvertTableViewCell: UITableViewCell {
   @IBOutlet var authorView: UIView!
   @IBOutlet var thumbnailImageView: UIImageView!
   @IBOutlet var fullnameLabel: UILabel!
+  @IBOutlet var dateLabel: UILabel!
   
   @IBOutlet var titleView: UIView!
   @IBOutlet var titleLabel: UILabel!
@@ -53,6 +54,7 @@ class AdvertTableViewCell: UITableViewCell {
     titleLabel.text = viewModel.title
     fullnameLabel.text = viewModel.fullname
     commentsLabel.text = "\(viewModel.numberOfComments)"
+    dateLabel.text = viewModel.createdDate
     
     if let avatarURL = viewModel.avatarURL {
       thumbnailImageView.loadImage(at: avatarURL, completion: { })

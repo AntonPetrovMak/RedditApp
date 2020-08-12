@@ -18,6 +18,7 @@ struct Post {
   let url: String?
   let createdUtc: Double
   let postHint: PostHint?
+  let created: Double
 }
 
 // MARK: - Decodable
@@ -25,14 +26,16 @@ struct Post {
 extension Post: Decodable {
   
   enum CodingKeys: String, CodingKey {
-    case id = "id"
-    case title = "title"
-    case author = "author"
+    case id
+    case title
+    case author
     case authorFullname = "author_fullname"
-    case thumbnail = "thumbnail"
+    case thumbnail
     case numComments = "num_comments"
-    case url = "url"
+    case url
     case createdUtc = "created_utc"
     case postHint = "post_hint"
+    case created
   }
+  
 }

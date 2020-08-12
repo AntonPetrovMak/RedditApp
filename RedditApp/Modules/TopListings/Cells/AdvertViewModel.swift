@@ -15,5 +15,6 @@ struct AdvertViewModel {
   let numberOfComments: Int
   let avatarURL: URL?
   let contentImageURL: URL?
+  let createdDate: String
   
 }

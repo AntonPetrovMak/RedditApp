@@ -9,18 +9,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertTableViewCell" rowHeight="403" id="KGk-i7-Jjw" customClass="AdvertTableViewCell" customModule="RedditApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="451" height="403"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AdvertTableViewCell" rowHeight="543" id="KGk-i7-Jjw" customClass="AdvertTableViewCell" customModule="RedditApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="543"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="451" height="403"/>
+                <rect key="frame" x="0.0" y="0.0" width="451" height="543"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVL-If-ygq">
-                        <rect key="frame" x="15" y="8" width="421" height="387"/>
+                        <rect key="frame" x="15" y="8" width="421" height="527"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dks-4O-qyC">
-                                <rect key="frame" x="0.0" y="0.0" width="421" height="387"/>
+                                <rect key="frame" x="0.0" y="0.0" width="421" height="527"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPM-fx-0sM">
                                         <rect key="frame" x="0.0" y="0.0" width="421" height="41"/>
@@ -44,6 +44,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 hours ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGM-Kf-d0m">
+                                                <rect key="frame" x="331" y="11.5" width="82" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -52,14 +58,19 @@
                                             <constraint firstItem="byG-Xb-Ems" firstAttribute="leading" secondItem="WPM-fx-0sM" secondAttribute="leading" constant="5" id="C7H-fr-uhc"/>
                                             <constraint firstAttribute="bottom" secondItem="byG-Xb-Ems" secondAttribute="bottom" constant="6" id="EHp-ur-Jot"/>
                                             <constraint firstAttribute="trailing" secondItem="MNv-TB-dtD" secondAttribute="trailing" constant="5" id="Wk7-6S-g7s"/>
+                                            <constraint firstAttribute="trailing" secondItem="IGM-Kf-d0m" secondAttribute="trailing" constant="8" id="b0i-aF-I71"/>
                                             <constraint firstItem="byG-Xb-Ems" firstAttribute="top" secondItem="WPM-fx-0sM" secondAttribute="top" constant="5" id="f8i-n1-bKd"/>
+                                            <constraint firstItem="IGM-Kf-d0m" firstAttribute="centerY" secondItem="WPM-fx-0sM" secondAttribute="centerY" id="lCO-kc-h1W"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFe-zS-a1M">
-                                        <rect key="frame" x="0.0" y="41" width="421" height="41.5"/>
+                                        <rect key="frame" x="0.0" y="41" width="421" height="51"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-oR-3Ys">
-                                                <rect key="frame" x="5" y="5" width="411" height="31.5"/>
+                                                <rect key="frame" x="5" y="5" width="411" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="r2t-5u-ho2"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -74,25 +85,25 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5a-5T-p5r">
-                                        <rect key="frame" x="0.0" y="82.5" width="421" height="274.5"/>
+                                        <rect key="frame" x="0.0" y="92" width="421" height="405"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lij-Mq-Eh9">
-                                                <rect key="frame" x="70" y="0.0" width="281" height="274.5"/>
+                                                <rect key="frame" x="8" y="0.0" width="405" height="405"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="lij-Mq-Eh9" secondAttribute="height" multiplier="281:275" id="hvh-Sc-WDA"/>
+                                                    <constraint firstAttribute="width" secondItem="lij-Mq-Eh9" secondAttribute="height" multiplier="1:1" id="hvh-Sc-WDA"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="lij-Mq-Eh9" firstAttribute="centerX" secondItem="f5a-5T-p5r" secondAttribute="centerX" id="ENq-nY-KIQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="lij-Mq-Eh9" secondAttribute="trailing" constant="8" id="JJ3-FW-qL5"/>
                                             <constraint firstItem="lij-Mq-Eh9" firstAttribute="top" secondItem="f5a-5T-p5r" secondAttribute="top" id="KkO-WW-ab6"/>
                                             <constraint firstAttribute="bottom" secondItem="lij-Mq-Eh9" secondAttribute="bottom" id="mP3-MX-Y7B"/>
-                                            <constraint firstItem="lij-Mq-Eh9" firstAttribute="width" secondItem="f5a-5T-p5r" secondAttribute="width" multiplier="2:3" id="nYf-Kx-uxa"/>
+                                            <constraint firstItem="lij-Mq-Eh9" firstAttribute="leading" secondItem="f5a-5T-p5r" secondAttribute="leading" constant="8" id="uca-rD-W5k"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1W-Ah-7aK">
-                                        <rect key="frame" x="0.0" y="357" width="421" height="30"/>
+                                        <rect key="frame" x="0.0" y="497" width="421" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1F2-aZ-bl4">
                                                 <rect key="frame" x="43.5" y="7" width="65.5" height="16"/>
@@ -132,7 +143,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dks-4O-qyC" secondAttribute="trailing" id="6Eo-cD-rrF"/>
-                            <constraint firstAttribute="bottom" secondItem="dks-4O-qyC" secondAttribute="bottom" id="IaU-6a-vsb"/>
+                            <constraint firstAttribute="bottom" secondItem="dks-4O-qyC" secondAttribute="bottom" priority="750" id="IaU-6a-vsb"/>
                             <constraint firstItem="dks-4O-qyC" firstAttribute="leading" secondItem="jVL-If-ygq" secondAttribute="leading" id="bOr-gk-6x3"/>
                             <constraint firstItem="dks-4O-qyC" firstAttribute="top" secondItem="jVL-If-ygq" secondAttribute="top" id="hHh-nA-7Qp"/>
                         </constraints>
@@ -154,13 +165,14 @@
                 <outlet property="commentsLabel" destination="pet-52-2zK" id="Thn-fR-0h4"/>
                 <outlet property="containerImageView" destination="f5a-5T-p5r" id="TbB-bC-MqZ"/>
                 <outlet property="contentImageView" destination="lij-Mq-Eh9" id="mw4-eL-K4i"/>
+                <outlet property="dateLabel" destination="IGM-Kf-d0m" id="Ctw-vv-awg"/>
                 <outlet property="footerView" destination="i1W-Ah-7aK" id="Fgl-Z6-CE0"/>
                 <outlet property="fullnameLabel" destination="MNv-TB-dtD" id="tqB-n4-rk9"/>
                 <outlet property="thumbnailImageView" destination="byG-Xb-Ems" id="p8o-tI-p1m"/>
                 <outlet property="titleLabel" destination="uf5-oR-3Ys" id="4lJ-ZN-8TT"/>
                 <outlet property="titleView" destination="TFe-zS-a1M" id="WaJ-JC-qeJ"/>
             </connections>
-            <point key="canvasLocation" x="200.72463768115944" y="195.87053571428569"/>
+            <point key="canvasLocation" x="200.72463768115944" y="242.07589285714283"/>
         </tableViewCell>
     </objects>
     <resources>

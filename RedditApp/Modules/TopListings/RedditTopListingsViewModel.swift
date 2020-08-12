@@ -41,25 +41,7 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   
   private var posts = [Post]() {
     didSet {
-      redditTopListings = posts.map {
-        var avatarURL: URL?
-        if let url = URL(string: $0.thumbnail), url.canOpenURL {
-          avatarURL = url
-        }
-        
-        var contentImageURL: URL?
-        if $0.postHint == .image,
-          let urlStr = $0.url,
-          let url = URL(string: urlStr), url.canOpenURL {
-          contentImageURL = url
-        }
-        
-        return AdvertViewModel(title: $0.title,
-                               fullname: $0.author,
-                               numberOfComments: $0.numComments,
-                               avatarURL: avatarURL,
-                               contentImageURL: contentImageURL)
-      }
+      redditTopListings = posts.map { viewModelsFactory.makeAdvertViewModel(post: $0) }
     }
   }
   
@@ -71,10 +53,14 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   }
   
   private var redditSections: [TopListingsSection] = []
-  private var worker: ListingsWorker = {
-    let store = RedditListingsStore()
-    return RedditListingsWorker(store: store)
-  }()
+  
+  private var worker: ListingsWorker
+  private var viewModelsFactory: AdvertViewModelFactory
+  
+  init(factory: AdvertViewModelFactory, worker: ListingsWorker) {
+    viewModelsFactory = factory
+    self.worker = worker
+  }
   
 }
 
