@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PreviewImageViewController: UIViewController {
+final class PreviewImageViewController: UIViewController {
   
   // MARK: - IBOutlets
   
@@ -17,6 +17,8 @@ class PreviewImageViewController: UIViewController {
   @IBOutlet var activityView: UIActivityIndicatorView!
   
   var viewModel: PreviewImageViewModel!
+  
+  // MARK: - Life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,7 +41,6 @@ class PreviewImageViewController: UIViewController {
       self?.saveButton.isEnabled = true
       self?.setActivityViewLoading(false)
     })
-    
   }
   
   // MARK: - Actions

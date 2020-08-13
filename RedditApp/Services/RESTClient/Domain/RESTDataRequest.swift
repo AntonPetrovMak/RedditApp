@@ -64,7 +64,7 @@ private extension DataTaskHelper {
       
       if let data = data {
         print("📥\(response?.url?.absoluteString ?? "")")
-
+        
         guard data.count < 100_000 else {
           print("⚠️RESPONSE: data size is more than 100000 bytes")
           return

@@ -9,9 +9,10 @@
 import UIKit
 
 enum RESTDecodeStrategy {
+  
   case useOriginal
   case useBaseResponse
-    
+  
   func decode<T: Decodable>(data: Data) throws -> T {
     var dataModel: Any?
     switch self {

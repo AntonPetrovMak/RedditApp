@@ -9,6 +9,7 @@
 import Foundation
 
 struct Post {
+  
   let id: String
   let title: String
   let author: String
@@ -19,6 +20,7 @@ struct Post {
   let createdUtc: Double
   let postHint: PostHint?
   let created: Double
+  
 }
 
 // MARK: - Decodable

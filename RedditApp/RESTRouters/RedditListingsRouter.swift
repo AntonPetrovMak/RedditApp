@@ -35,6 +35,8 @@ enum RedditListingsRouter: RESTRouterProtocol {
   
 }
 
+// MARK: - Payload data 
+
 extension RedditListingsRouter {
   
   struct TopListingsData: Codable {

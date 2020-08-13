@@ -13,6 +13,7 @@ protocol ListingsWorker {
   func fetchMorePosts(completion: @escaping (Result<[Post], Error>) -> Void)
 }
 
+// NOTE: here can cashed listings as you wish using NSUserDefault or any database
 final class RedditListingsWorker: ListingsWorker {
   
   private let store: ListingsStore

@@ -36,8 +36,6 @@ final class RedditPreviewImageViewModel: NSObject, PreviewImageViewModel {
   
   // MARK: - Image Saving Helpers
   
-  
-  
   func saveImageToAlbum(image: UIImage) {
     UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
   }

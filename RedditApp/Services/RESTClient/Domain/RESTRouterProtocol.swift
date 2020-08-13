@@ -11,6 +11,7 @@ import Foundation
 enum HTTPMethod: String {
   case get
   case post
+  // TODO: can be more methods like as put, delete and ect.
 }
 
 protocol URLRequestConvertible {

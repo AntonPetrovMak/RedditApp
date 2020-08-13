@@ -38,4 +38,5 @@ final class UIImageLoader {
     imageLoader.cancelLoad(uuid)
     uuidMap.removeValue(forKey: imageView)
   }
+  
 }

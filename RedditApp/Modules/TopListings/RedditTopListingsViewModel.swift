@@ -32,11 +32,7 @@ final class RedditTopListingsViewModel: TopListingsViewModel {
   func loadMoreSections() {
     fetchMorePosts(loadingIndicator: isActivityLoading)
   }
-  
-  func downloadImages() {
-    
-  }
-  
+
   // MARK: - Private properties
   
   private var posts = [Post]() {

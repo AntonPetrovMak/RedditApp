@@ -42,15 +42,15 @@ class AdvertTableViewCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    thumbnailImageView.image = nil
-    thumbnailImageView.cancelImageLoad()
-    contentImageView.image = nil
-    contentImageView.cancelImageLoad()
+    [thumbnailImageView, contentImageView].forEach {
+      $0?.image = nil
+      $0?.cancelImageLoad()
+    }
   }
   
   // MARK: - Private
   
-  func updateCell(_ viewModel: AdvertViewModel) {
+  private func updateCell(_ viewModel: AdvertViewModel) {
     titleLabel.text = viewModel.title
     fullnameLabel.text = viewModel.fullname
     commentsLabel.text = "\(viewModel.numberOfComments)"

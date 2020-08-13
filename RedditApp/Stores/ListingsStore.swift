@@ -12,6 +12,7 @@ protocol ListingsStore {
   func fetchPosts<T: Decodable>(count: UInt, limit: UInt, after: String?, before: String?, completion: @escaping (Result<T, Error>) -> Void)
 }
 
+// NOTE: this class can move to the data layer and protocol can stay on the domain layer.
 class RedditListingsStore: ListingsStore {
   
   func fetchPosts<T: Decodable>(count: UInt, limit: UInt, after: String?, before: String?, completion: @escaping (Result<T, Error>) -> Void) {

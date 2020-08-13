@@ -7,6 +7,7 @@
 //
 
 struct RESTBaseResponse {
+  
   let data: Any?
   let kind: String
   

@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIImageView {
+  
   func loadImage(at url: URL, completion: @escaping () -> Void) {
     UIImageLoader.loader.load(url, for: self, completion: completion)
   }
@@ -16,4 +17,5 @@ extension UIImageView {
   func cancelImageLoad() {
     UIImageLoader.loader.cancel(for: self)
   }
+  
 }

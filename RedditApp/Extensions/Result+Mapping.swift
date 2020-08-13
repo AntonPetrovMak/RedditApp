@@ -9,6 +9,7 @@
 import Foundation
 
 extension Result {
+  
   func mapSuccess(_ transform: (Success) -> Void) {
     switch self {
     case .success(let success):
@@ -24,4 +25,5 @@ extension Result {
       transform(failure)
     }
   }
+  
 }

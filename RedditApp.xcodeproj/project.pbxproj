@@ -262,7 +262,6 @@
 				2B4AECA624E18C7400F6E445 /* Workers */,
 				2B4AEE0B24E2889A00F6E445 /* Entities */,
 				2B7EBB7D24DDA4B90048062A /* Modules */,
-				2B7EBB6724DD9A9F0048062A /* Info.plist */,
 				2B7EBB7B24DD9B820048062A /* Storyboards */,
 				2B7EBB7C24DD9B9D0048062A /* Resources */,
 			);
@@ -290,6 +289,7 @@
 		2B7EBB7C24DD9B9D0048062A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2B7EBB6724DD9A9F0048062A /* Info.plist */,
 				2B7EBB6224DD9A9F0048062A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -307,11 +307,11 @@
 		2B7EBB7E24DDA4C10048062A /* TopListings */ = {
 			isa = PBXGroup;
 			children = (
+				2B939FB324E54BF600335635 /* Factories */,
 				2B7EBB8724DDA8070048062A /* Cells */,
 				2B7EBB7F24DDA4FC0048062A /* TopListingsViewController.swift */,
 				2B7EBB8124DDA5210048062A /* TopListingsViewModel.swift */,
 				2B4AEE1624E28F1C00F6E445 /* RedditTopListingsViewModel.swift */,
-				2B939FB124E4147B00335635 /* AdvertViewModelFactory.swift */,
 			);
 			path = TopListings;
 			sourceTree = "<group>";
@@ -333,6 +333,14 @@
 				2B939FAF24E3F1EF00335635 /* PreviewImageViewController.swift */,
 			);
 			path = PreviewImage;
+			sourceTree = "<group>";
+		};
+		2B939FB324E54BF600335635 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2B939FB124E4147B00335635 /* AdvertViewModelFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,7 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
-				INFOPLIST_FILE = RedditApp/Info.plist;
+				INFOPLIST_FILE = RedditApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,7 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2GS3DZHCM6;
-				INFOPLIST_FILE = RedditApp/Info.plist;
+				INFOPLIST_FILE = RedditApp/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

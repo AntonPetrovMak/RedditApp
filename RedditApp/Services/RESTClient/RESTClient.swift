@@ -58,6 +58,11 @@ final class RESTClient: RESTClientProtocol {
     }
   }
   
+  /// Method loaded an image data
+  ///
+  /// - Parameters:
+  ///   - url: a valid url on an image
+  ///   - completion: A closure to be executed once the request has finished.
   static func loadImage(url: URL, completion: @escaping CompletionResultHandler<Data>) -> URLSessionDataTask {
     let request = URLRequest(url: url)
     
